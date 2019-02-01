@@ -1,19 +1,23 @@
 
 
-require_relative('../models/student')
-require_relative('../models/house')
+require_relative('../models/artist')
+require_relative('../models/exhibit')
 
-house1 = House.new({'name' => 'gryffindor'})
+artist1 = Artist.new({
 
-
-house1.save
-
-
-student1 = Student.new({
-  'first_name' => 'hermione',
-  'last_name' => 'granger',
-  'house_id' => house1.id,
-  'age' => 12 })
+  'name' => 'Auguste Rodin',
+  'lifetime' => '1840 - 1917',
+  'nationality' => 'French'
+  })
 
 
-student1.save
+artist1.save
+
+exhibit1 = Exhibit.new({
+'title' => 'The Thinker',
+'exhibit_type' => 'Sculpture',
+'exhibit_date' => 1904,
+'url' => 'url',
+'artist_id' => artist1.id
+})
+exhibit1.save
