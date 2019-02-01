@@ -46,6 +46,50 @@ class Exhibit
     exhibit_list = SqlRunner.run(sql)
     exhibits = map_items(exhibit_list)
     return exhibits
-    
+
   end
-end
+
+  def delete()
+    sql = "DELETE FROM exhibits WHERE id = $1"
+    values = [@id]
+    sql_runner.run(sql, values)
+  end
+
+  def update()
+    sql = "UPDATE exhibits
+    SET
+    (
+      title,
+      exhibit_type,
+      exhibit_date,
+      url,
+      artist_id
+      ) =
+      (
+        $1, $2, $3, $4, $5
+      )
+      WHERE id = $6"
+      values = [@title, @exhibit_type, @exhibit_date, @url, @artist_id, @id]
+      SqlRunner.run(sql, values)
+    end
+
+    def self.find(id)
+      sql = "SELECT * FROM exhibits WHERE id = $1"
+      values = [id]
+      result = SqlRunner.run(sql, values).first
+      exhibit = Exhibit.new(result)
+      return exhibit
+    end
+
+    def self.find_by_artist(id)
+      sql = "SELECT * FROM exhibits WHERE artist_id = $1"
+      values = [id]
+      result = SqlRunner.run(sql, values).first
+      exhibit = Exhibit.new(result)
+      return exhibit
+    end
+
+
+
+
+  end

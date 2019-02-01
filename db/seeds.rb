@@ -13,21 +13,12 @@ artist1 = Artist.new({ 'name' => 'Auguste Rodin', 'lifetime' => '1840 - 1917', '
 
 artist1.save_artist()
 
-artist1 = Artist.new({ 'name' => 'Auguste Rodin', 'lifetime' => '1840 - 1917', 'nationality' => 'French'})
+artist2 = Artist.new({ 'name' => 'Salvador Dali', 'lifetime' => '1904 - 1989', 'nationality' => 'Spanish'})
+
+
 
 artist1.save_artist()
-
-artist1 = Artist.new({ 'name' => 'Auguste Rodin', 'lifetime' => '1840 - 1917', 'nationality' => 'French'})
-
-artist1.save_artist()
-
-artist1 = Artist.new({ 'name' => 'Auguste Rodin', 'lifetime' => '1840 - 1917', 'nationality' => 'French'})
-
-artist1.save_artist()
-
-artist1 = Artist.new({ 'name' => 'Auguste Rodin', 'lifetime' => '1840 - 1917', 'nationality' => 'French'})
-
-artist1.save_artist()
+artist2.save_artist()
 
 
 
@@ -43,6 +34,16 @@ artist1.save_artist()
   })
 
   exhibit1.save
+
+  exhibit2 = Exhibit.new({
+  'title' => 'The Beano',
+  'exhibit_type' => 'Literature',
+  'exhibit_date' => 1904,
+  'url' => 'url',
+  'artist_id' => artist2.id
+  })
+
+  exhibit2.save
 
   binding.pry
   nil
