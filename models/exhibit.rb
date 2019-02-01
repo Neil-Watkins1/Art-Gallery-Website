@@ -1,9 +1,10 @@
 require_relative('../db/sql_runner')
+require_relative('./artist')
 
-class Exhibits
+class Exhibit
 
-  attr_accessor :
-  attr_reader :
+  attr_accessor :title, :exhibit_type, :exhibit_date, :url, :artist_id
+  attr_reader :id
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
@@ -15,7 +16,7 @@ class Exhibits
 
   end
 
-  def add_exhibit()
+  def save()
     sql= "INSERT INTO exhibits
     (
       title,
