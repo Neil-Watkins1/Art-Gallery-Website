@@ -35,4 +35,17 @@ class Exhibit
     id = result.first['id']
     @id = id
   end
+
+  def self.delete_all()
+    sql = "DELETE FROM exhibits"
+    SqlRunner.run(sql)
+  end
+
+  def self.all()
+    sql = "SELECT * FROM exhibits"
+    exhibit_list = SqlRunner.run(sql)
+    exhibits = map_items(exhibit_list)
+    return exhibits
+    
+  end
 end

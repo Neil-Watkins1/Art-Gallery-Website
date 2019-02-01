@@ -34,4 +34,18 @@ class Artist
     sql = "DELETE FROM artists"
     SqlRunner.run(sql)
   end
+
+  def self.all()
+    sql = "SELECT * FROM artists"
+    artist_list = SqlRunner.run(sql)
+    artists = map_items(artist_list)
+    return artists
+
+    
+    # def self.all()
+    # sql = "SELECT * FROM students"
+    # student_data = SqlRunner.run(sql)
+    # students = map_items(student_data)
+    # return students
+  end
 end

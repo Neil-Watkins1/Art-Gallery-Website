@@ -5,8 +5,25 @@ require_relative('../models/exhibit')
 
 require('pry')
 
+Exhibit.delete_all()
 Artist.delete_all()
 
+
+artist1 = Artist.new({ 'name' => 'Auguste Rodin', 'lifetime' => '1840 - 1917', 'nationality' => 'French'})
+
+artist1.save_artist()
+
+artist1 = Artist.new({ 'name' => 'Auguste Rodin', 'lifetime' => '1840 - 1917', 'nationality' => 'French'})
+
+artist1.save_artist()
+
+artist1 = Artist.new({ 'name' => 'Auguste Rodin', 'lifetime' => '1840 - 1917', 'nationality' => 'French'})
+
+artist1.save_artist()
+
+artist1 = Artist.new({ 'name' => 'Auguste Rodin', 'lifetime' => '1840 - 1917', 'nationality' => 'French'})
+
+artist1.save_artist()
 
 artist1 = Artist.new({ 'name' => 'Auguste Rodin', 'lifetime' => '1840 - 1917', 'nationality' => 'French'})
 
