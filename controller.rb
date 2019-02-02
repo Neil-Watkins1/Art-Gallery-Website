@@ -18,3 +18,8 @@ get '/manager' do
   @exhibits = Exhibit.all
   erb (:"manager/m_index")
 end
+
+get '/exhibits/:id' do
+  @exhibit = Exhibit.find(params[:id])
+  erb( :"visitor/details" )
+end
