@@ -36,18 +36,18 @@ class Exhibit
     @id = id
   end
 
+
+  def self.all()
+    sql = "SELECT * FROM exhibits"
+    results = SqlRunner.run(sql)
+    return results.map { |exhibit| Exhibit.new( exhibit ) }
+  end
+
   def self.delete_all()
     sql = "DELETE FROM exhibits"
     SqlRunner.run(sql)
   end
 
-  def self.all()
-    sql = "SELECT * FROM exhibits"
-    exhibit_list = SqlRunner.run(sql)
-    exhibits = map_items(exhibit_list)
-    return exhibits
-
-  end
 
   def delete()
     sql = "DELETE FROM exhibits WHERE id = $1"
@@ -89,7 +89,12 @@ class Exhibit
       return exhibit
     end
 
+    def artist()
+      artist = Artist.find(@artist_id)
+      return artist
 
 
+    end
 
+    
   end

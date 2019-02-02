@@ -1,0 +1,8 @@
+<h2>Current Exhibits</h2>
+
+<% @exhibits.each do |exhibit| %>
+
+<p>Title: <%= exhibit.title %> </p>
+<p>Artist Name: <%= exhibit.artist.name %></p>
+<hr>
+<% end %>
