@@ -4,7 +4,7 @@
 <% @exhibits.each do |exhibit| %>
 
 <p>Title: <%= exhibit.title %> </p>
-<p>Artist Name: <%= exhibit.artist.name %></p>
+<h3><a href="/visitorf/<%= exhibit.artist_id %>"> Artist Name: <%= exhibit.artist.name %></a></h3>
 
 
 

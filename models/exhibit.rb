@@ -79,7 +79,7 @@ class Exhibit
       exhibit = SqlRunner.run(sql, values).first
       return Exhibit.new(exhibit)
     end
-    
+
 
     def self.find_by_artist(id)
       sql = "SELECT * FROM exhibits WHERE artist_id = $1"
@@ -88,6 +88,13 @@ class Exhibit
       exhibit = Exhibit.new(result)
       return exhibit
     end
+
+    # def self.find_by_artist(id)
+    #   sql = "SELECT * FROM exhibits WHERE artist_id = $1"
+    #   values = [id]
+    #   exhibit = SqlRunner.run(sql, values)
+    #   return Exhibit.new(exhibit)
+    # end
 
     def artist()
       artist = Artist.find(@artist_id)

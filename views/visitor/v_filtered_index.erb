@@ -1,10 +1,13 @@
 
-<h2>All Exhibits by <%= exhibit.artist.name %></h2>
+<h2>All Exhibits by <%= @exhibits.artist.name %></h2>
 
 <% @exhibits.each do |exhibit| %>
 
 <p>Title: <%= exhibit.title %> </p>
 <p>Artist Name: <%= exhibit.artist.name %></p>
+
+
+
 
 <p><a href="/visitor/<%= exhibit.id %>">Exhibit Details</a></p>
 <hr>
