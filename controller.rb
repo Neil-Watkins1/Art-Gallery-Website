@@ -19,12 +19,8 @@ get '/manager/add_exhibit' do
   erb(:"manager/add_exhibit")
 end
 
-# get '/students/new' do
-#   @houses = House.all
-#   erb(:new)
-# end
 
-post '/exhibits' do
+post '/exhibits/:id' do
   Exhibit.new(params).save
   redirect to '/manager'
 end
@@ -45,7 +41,15 @@ get '/visitorf/:id' do
   erb( :"visitor/v_filtered_index" )
 end
 
+
 get '/manager/:id' do
+  @artists = Artist.all
   @exhibit = Exhibit.find(params['id'])
   erb( :"manager/edit" )
+end
+
+post '/manager/:id' do
+  exhibit = Exhibit.new(params)
+  exhibit.update
+  redirect to "/details/#{params['id']}"
 end
