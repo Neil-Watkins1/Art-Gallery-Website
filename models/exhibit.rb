@@ -40,7 +40,7 @@ class Exhibit
     artist = Artist.find(@artist_id)
     return artist
   end
-  
+
 
   def self.all()
     sql = "SELECT * FROM exhibits"
@@ -54,11 +54,12 @@ class Exhibit
   end
 
 
-  def delete()
+  def self.delete()
     sql = "DELETE FROM exhibits WHERE id = $1"
     values = [@id]
     sql_runner.run(sql, values)
   end
+
 
   def update()
     sql = "UPDATE exhibits

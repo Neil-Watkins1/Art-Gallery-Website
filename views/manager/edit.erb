@@ -1,8 +1,8 @@
 
-  <h2>Edit <%= @exhibit.title%></h2>
+  <h2>Change Details for <%= @exhibit.title%></h2>
 
 
-  <form method="POST" action="/exhibits/<%= @exhibit.id %>">
+  <form method="POST" action="/exhibits/<%= @exhibit.id %>/edit">
 
     <label for="title">Title:</label>
     <input type="text" name="title" id="title" value ="<%= @exhibit.title %>"/>
@@ -26,10 +26,14 @@
       <option value=<%= artist.id %>><%= artist.name %></option>
       <% end %>
       <% end %>
-    </select> --> %>
+    </select>
 
     <hr>
 
       <input type="submit" value="Save Exhibit Changes"/>
 
     </form>
+
+    <form action="/manager/<%= @exhibit.id %>/delete" method="POST">
+            <input type="submit" value="delete" />
+          </form>

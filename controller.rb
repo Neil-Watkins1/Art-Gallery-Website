@@ -48,8 +48,13 @@ get '/manager/:id' do
   erb( :"manager/edit" )
 end
 
-post '/manager/:id' do
+post '/exhibits/:id/edit' do
   exhibit = Exhibit.new(params)
   exhibit.update
-  redirect to "/details/#{params['id']}"
+  redirect to "/manager"
+end
+
+post '/manager/:id/delete' do
+  Exhibit.delete(params[:id])
+  redirect to("/manager")
 end
