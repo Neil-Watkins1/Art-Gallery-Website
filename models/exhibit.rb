@@ -76,10 +76,10 @@ class Exhibit
     def self.find(id)
       sql = "SELECT * FROM exhibits WHERE id = $1"
       values = [id]
-      result = SqlRunner.run(sql, values).first
-      exhibit = Exhibit.new(result)
-      return exhibit
+      exhibit = SqlRunner.run(sql, values).first
+      return Exhibit.new(exhibit)
     end
+    
 
     def self.find_by_artist(id)
       sql = "SELECT * FROM exhibits WHERE artist_id = $1"
@@ -96,5 +96,5 @@ class Exhibit
 
     end
 
-    
+
   end

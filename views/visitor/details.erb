@@ -4,9 +4,12 @@
 
 
 <p>Title: <%= @exhibit.title %> </p>
-<p>Artist Name: <%= @exhibit.artist.name %></p>
+<hr>
 
+<img id="small_picture" <%=@exhibit.url%> alt=" <%@exhibit.title%> ">
 
+<p>Artist Name: <%= @exhibit.artist.name %> </p>
+<p>Exhibit Type: <%= @exhibit.exhibit_type%> </p>
+<p>Exhibit Date: <%= @exhibit.exhibit_date%> </p>
 
-    <hr>
-<% end %>
+<hr>

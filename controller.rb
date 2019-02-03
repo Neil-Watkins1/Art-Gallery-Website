@@ -19,7 +19,7 @@ get '/manager' do
   erb (:"manager/m_index")
 end
 
-get '/exhibits/:id' do
-  @exhibit = Exhibit.find(params[:id])
+get '/visitor/:id' do
+  @exhibit = Exhibit.find(params['id'])
   erb( :"visitor/details" )
 end
