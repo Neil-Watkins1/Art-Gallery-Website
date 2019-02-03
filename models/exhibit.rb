@@ -36,6 +36,11 @@ class Exhibit
     @id = id
   end
 
+  def artist()
+    artist = Artist.find(@artist_id)
+    return artist
+  end
+  
 
   def self.all()
     sql = "SELECT * FROM exhibits"
@@ -96,12 +101,7 @@ class Exhibit
     #   return Exhibit.new(exhibit)
     # end
 
-    def artist()
-      artist = Artist.find(@artist_id)
-      return artist
 
-
-    end
 
 
   end

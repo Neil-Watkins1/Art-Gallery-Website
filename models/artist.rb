@@ -43,6 +43,10 @@ class Artist
 
   end
 
+def self.map_items(artist_list)
+  return artist_list.map { |artist| Artist.new(artist) }
+end
+
 
 def delete()
   sql = "DELETE FROM artists WHERE id = $1"
