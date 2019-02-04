@@ -1,4 +1,7 @@
 
+<div class="topnav">
+  <a class="active" href="/">Home</a>
+
 <h2>Exhibit</h2>
 
 
@@ -6,7 +9,7 @@
 <h3>Title: <%= @exhibit.title %> </h3>
 <hr>
 
-<img id="small_picture" <%=@exhibit.url%> alt=" <%@exhibit.title%> ">
+<img id="picture" src=<%=@exhibit.url%> alt=" <%@exhibit.title%> ">
 
 <p>Artist Name: <%= @exhibit.artist.name %> </p>
 <p>Exhibit Type: <%= @exhibit.exhibit_type%> </p>

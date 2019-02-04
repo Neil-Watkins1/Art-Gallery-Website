@@ -33,8 +33,9 @@ class Exhibit
     values = [@title, @exhibit_type, @exhibit_date, @url, @artist_id]
     result = SqlRunner.run(sql, values)
     id = result.first['id']
-    @id = id
+    @id = id.to_i
   end
+
 
   def artist()
     artist = Artist.find(@artist_id)
@@ -80,6 +81,7 @@ class Exhibit
       SqlRunner.run(sql, values)
     end
 
+
     def self.find(id)
       sql = "SELECT * FROM exhibits WHERE id = $1"
       values = [id]
@@ -91,19 +93,18 @@ class Exhibit
     def self.find_by_artist(id)
       sql = "SELECT * FROM exhibits WHERE artist_id = $1"
       values = [id]
-      result = SqlRunner.run(sql, values).first
-      exhibit = Exhibit.new(result)
-      return exhibit
+      results = SqlRunner.run(sql, values)
+        return results.map { |exhibit| Exhibit.new( exhibit ) }
     end
+
 
     # def self.find_by_artist(id)
     #   sql = "SELECT * FROM exhibits WHERE artist_id = $1"
     #   values = [id]
-    #   exhibit = SqlRunner.run(sql, values)
-    #   return Exhibit.new(exhibit)
+    #   result = SqlRunner.run(sql, values)
+    #   exhibit = Exhibit.new(result)
+    #   return exhibit
     # end
-
-
 
 
   end

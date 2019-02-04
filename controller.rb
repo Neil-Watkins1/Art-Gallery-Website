@@ -11,6 +11,7 @@ get '/' do
   erb( :greet )
 end
 
+
 get '/visitor' do
   @exhibits = Exhibit.all
   erb (:"visitor/v_index")
@@ -26,7 +27,7 @@ get '/manager/new_artist' do
 end
 
 
-post '/exhibits/:id' do
+post '/exhibits' do
   Exhibit.new(params).save
   redirect to '/manager'
 end
