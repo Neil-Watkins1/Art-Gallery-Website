@@ -17,14 +17,20 @@ artist2 = Artist.new({ 'name' => 'Salvador Dali', 'lifetime' => '1904 - 1989', '
 
 artist3 = Artist.new({'name' => 'Sir Alfred Gilbert', 'lifetime' => '1854 - 1934', 'nationality' => 'British'})
 
+artist4 = Artist.new({'name' => 'Pablo Picasso', 'lifetime' => '1881 - 1973', 'nationality' => 'Spanish'})
+
+artist5 = Artist.new({'name' => 'Pierre-Auguste Renoir', 'lifetime' => '1841 - 1919', 'nationality' => 'French'})
+
+artist6 = Artist.new({'name' => 'David Hockney', 'lifetime' => '1937 - current', 'nationality' => 'British'})
+
 
 
 artist1.save_artist()
 artist2.save_artist()
 artist3.save_artist()
-
-
-
+artist4.save_artist()
+artist5.save_artist()
+artist6.save_artist()
 
 
   exhibit1 = Exhibit.new({
@@ -76,6 +82,57 @@ artist3.save_artist()
   })
 
   exhibit5.save
+
+  exhibit6 = Exhibit.new({
+  'title' => 'The Temptation of St Anthony',
+  'exhibit_type' => 'Surrealism',
+  'exhibit_date' => 1946,
+  'url' => '/images/St_Anthony.jpeg',
+  'artist_id' => artist2.id
+  })
+
+  exhibit6.save
+
+  exhibit7 = Exhibit.new({
+  'title' => 'Factory Horta de Ebro',
+  'exhibit_type' => 'Cubism',
+  'exhibit_date' => 1909,
+  'url' => '/images/Factory.jpeg',
+  'artist_id' => artist4.id
+  })
+
+  exhibit7.save
+
+  exhibit8 = Exhibit.new({
+  'title' => 'Self Portrait 1910',
+  'exhibit_type' => 'Impressionist',
+  'exhibit_date' => 1910,
+  'url' => '/images/Self_portrait.jpeg',
+  'artist_id' => artist5.id
+  })
+
+  exhibit8.save
+
+  exhibit9 = Exhibit.new({
+  'title' => 'A Bigger Splash',
+  'exhibit_type' => 'Pop Art',
+  'exhibit_date' => 1967,
+  'url' => '/images/A_Bigger_Splash.jpeg',
+  'artist_id' => artist6.id
+  })
+
+  exhibit9.save
+
+  exhibit10 = Exhibit.new({
+  'title' => 'Portrait of an Artist (Pool With Two Figures)',
+  'exhibit_type' => 'Pop Art',
+  'exhibit_date' => 1972,
+  'url' => '/images/Portrait_of_an_Artist.jpeg',
+  'artist_id' => artist6.id
+  })
+
+  exhibit10.save
+
 
   binding.pry
   nil
