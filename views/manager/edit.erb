@@ -26,14 +26,17 @@
       <option value=<%= artist.id %>><%= artist.name %></option>
       <% end %>
       <% end %>
+
     </select>
 
     <hr>
 
       <input type="submit" value="Save Exhibit Changes"/>
 
+
+
     </form>
 
+
     <form action="/manager/<%= @exhibit.id %>/delete" method="POST">
-            <input type="submit" value="delete" />
-          </form>
+            <input type="submit" value="Remove Exhibit"></form>

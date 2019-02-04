@@ -1,3 +1,5 @@
+require('pry')
+
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
 require_relative('models/artist')
@@ -19,15 +21,25 @@ get '/manager/add_exhibit' do
   erb(:"manager/add_exhibit")
 end
 
+get '/manager/new_artist' do
+  erb(:"manager/new_artist")
+end
+
 
 post '/exhibits/:id' do
   Exhibit.new(params).save
   redirect to '/manager'
 end
 
+post '/artists' do
+  Artist.new(params).save_artist
+  redirect to '/manager'
+end
+
 
 get '/manager' do
   @exhibits = Exhibit.all
+  @artists = Artist.all
   erb (:"manager/m_index")
 end
 
@@ -55,6 +67,11 @@ post '/exhibits/:id/edit' do
 end
 
 post '/manager/:id/delete' do
-  Exhibit.delete(params[:id])
-  redirect to("/manager")
+  Exhibit.delete(params['id'])
+  redirect to "/manager"
+end
+
+post '/manager/:id/artist_delete' do
+  Artist.delete(params['id'])
+  redirect to "/manager"
 end

@@ -54,11 +54,12 @@ class Exhibit
   end
 
 
-  def self.delete()
+  def self.delete(id)
     sql = "DELETE FROM exhibits WHERE id = $1"
-    values = [@id]
-    sql_runner.run(sql, values)
+    values = [id]
+    SqlRunner.run(sql, values)
   end
+
 
 
   def update()

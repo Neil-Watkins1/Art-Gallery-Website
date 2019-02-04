@@ -8,8 +8,24 @@
 <hr>
 <% end %>
 
-<p><a href="/manager/add_exhibit">Add Exhibit</a></p>
+<p><a href="/manager/add_exhibit">New Exhibit</a></p>
+
+<hr>
+<hr>
+<hr>
+<h2>Current Artists</h2>
+
+<% @artists.each do |artist| %>
+
+<p>Name: <%= artist.name %> </p>
+<p>Lifetime: <%= artist.lifetime %> </p>
+<p>nationality: <%= artist.nationality %> </p>
+
+<form action="/manager/<%= artist.id %>/artist_delete" method="POST">
+  <input type="submit" value="Remove Artist"></form>
 
 
+<hr>
+<% end %>
 
-  
+<p><a href="/manager/new_artist">New Artist</a></p>
