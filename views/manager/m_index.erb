@@ -1,35 +1,48 @@
-
-<div class="topnav">
-  <a class="active" href="/">Home</a>
-
-<h2>Current Exhibits</h2>
-
-<% @exhibits.each do |exhibit| %>
-
-<p>Title: <%= exhibit.title %> </p>
-<p>Artist Name: <%= exhibit.artist.name %></p>
-<p><a href="/manager/<%= exhibit.id %>">Edit Exhibit</a></p>
-<hr>
-<% end %>
-
-<p><a href="/manager/add_exhibit">New Exhibit</a></p>
-
-<hr>
-<hr>
-<hr>
-<h2>Current Artists</h2>
-
-<% @artists.each do |artist| %>
-
-<p>Name: <%= artist.name %> </p>
-<p>Lifetime: <%= artist.lifetime %> </p>
-<p>nationality: <%= artist.nationality %> </p>
-
-<form action="/manager/<%= artist.id %>/artist_delete" method="POST">
-  <input type="submit" value="Remove Artist"></form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
 
 
-<hr>
-<% end %>
+  <div class="topnav">
+    <a class="active" href="/">Home</a>
 
-<p><a href="/manager/new_artist">New Artist</a></p>
+  <h2>Current Exhibits</h2>
+
+  <% @exhibits.each do |exhibit| %>
+
+  <p>Title: <%= exhibit.title %> </p>
+  <p>Artist Name: <%= exhibit.artist.name %></p>
+  <p><a href="/manager/<%= exhibit.id %>">Edit Exhibit</a></p>
+  <hr>
+  <% end %>
+
+  <p><a href="/manager/add_exhibit">New Exhibit</a></p>
+
+  <hr>
+  <hr>
+  <hr>
+  <h2>Current Artists</h2>
+
+  <% @artists.each do |artist| %>
+
+  <p>Name: <%= artist.name %> </p>
+  <p>Lifetime: <%= artist.lifetime %> </p>
+  <p>nationality: <%= artist.nationality %> </p>
+
+  <form action="/manager/<%= artist.id %>/artist_delete" method="POST">
+    <input type="submit" value="Remove Artist"></form>
+
+
+  <hr>
+  <% end %>
+
+  <p><a href="/manager/new_artist">New Artist</a></p>
+
+</body>
+</html>

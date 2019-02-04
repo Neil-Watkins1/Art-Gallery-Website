@@ -1,41 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="topnav">
+    <a class="active" href="/">Home</a>
 
-<div class="topnav">
-  <a class="active" href="/">Home</a>
-
-<h2>New Exhibit</h2>
-
-
-<form method="POST" action="/exhibits">
-
-  <label for="title">Title:</label>
-  <input type="text" name="title" id="title"/>
-
-  <label for="exhibit_type">Exhibit Type:</label>
-  <input type="text" name="exhibit_type" id="exhibit_type"/>
-
-
-  <label for="exhibit_date">Exhibit Date:</label>
-  <input type="text" name="exhibit_date" id="exhibit_date"/>
-
-  <label for="url">url:</label>
-  <input type="text" name="url" id="url"/>
+  <h2>New Exhibit</h2>
 
 
-  <label for="artist_select">Select Artist:</label>
-  <select name="artist_id" id="artist_select">
-    <% @artists.each do |artist| %>
-        <option value=<%= artist.id %>><%= artist.name %></option>
-    <% end %>
-  </select>
+  <form method="POST" action="/exhibits">
+
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title"/>
+
+    <label for="exhibit_type">Exhibit Type:</label>
+    <input type="text" name="exhibit_type" id="exhibit_type"/>
+
+
+    <label for="exhibit_date">Exhibit Date:</label>
+    <input type="text" name="exhibit_date" id="exhibit_date"/>
+
+    <label for="url">url:</label>
+    <input type="text" name="url" id="url"/>
+
+
+    <label for="artist_select">Select Artist:</label>
+    <select name="artist_id" id="artist_select">
+      <% @artists.each do |artist| %>
+          <option value=<%= artist.id %>><%= artist.name %></option>
+      <% end %>
+    </select>
 
 
 
 
 
-  <hr>
+    <hr>
 
 
-  <input type="submit" value="Add This Exhibit"/>
+    <input type="submit" value="Add This Exhibit"/>
 
 
-</form>
+  </form>
+
+
+</body>
+</html>

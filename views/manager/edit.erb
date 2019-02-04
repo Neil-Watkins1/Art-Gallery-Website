@@ -1,45 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
 
-<div class="topnav">
-  <a class="active" href="/">Home</a>
-  
-  <h2>Change Details for <%= @exhibit.title%></h2>
+  <div class="topnav">
+    <a class="active" href="/">Home</a>
 
-
-  <form method="POST" action="/exhibits/<%= @exhibit.id %>/edit">
-
-    <label for="title">Title:</label>
-    <input type="text" name="title" id="title" value ="<%= @exhibit.title %>"/>
-
-    <label for="exhibit_type">Exhibit Type:</label>
-    <input type="text" name="exhibit_type" id="exhibit_type" value ="<%= @exhibit.exhibit_type %>"/>
-
-  <label for="exhibit_date">Exhibit Date:</label>
-    <input type="text" name="exhibit_date" id="exhibit_date" value ="<%= @exhibit.exhibit_date %>"/>
-
-    <label for="url">url:</label>
-    <input type="text" name="url" id="url" value ="<%= @exhibit.url %>"/>
+    <h2>Change Details for <%= @exhibit.title%></h2>
 
 
-    <label for="artist_select">Select Artist:</label>
-    <select name="artist_id" id="artist_select" selected="<%= @exhibit.artist_id  %>">
-      <% @artists.each do |artist| %>
-      <% if artist.id == @exhibit.artist_id %>
-      <option value=<%= artist.id %> selected><%= artist.name %></option>
-      <% else %>
-      <option value=<%= artist.id %>><%= artist.name %></option>
-      <% end %>
-      <% end %>
+    <form method="POST" action="/exhibits/<%= @exhibit.id %>/edit">
 
-    </select>
+      <label for="title">Title:</label>
+      <input type="text" name="title" id="title" value ="<%= @exhibit.title %>"/>
 
-    <hr>
+      <label for="exhibit_type">Exhibit Type:</label>
+      <input type="text" name="exhibit_type" id="exhibit_type" value ="<%= @exhibit.exhibit_type %>"/>
 
-      <input type="submit" value="Save Exhibit Changes"/>
+    <label for="exhibit_date">Exhibit Date:</label>
+      <input type="text" name="exhibit_date" id="exhibit_date" value ="<%= @exhibit.exhibit_date %>"/>
+
+      <label for="url">url:</label>
+      <input type="text" name="url" id="url" value ="<%= @exhibit.url %>"/>
 
 
+      <label for="artist_select">Select Artist:</label>
+      <select name="artist_id" id="artist_select" selected="<%= @exhibit.artist_id  %>">
+        <% @artists.each do |artist| %>
+        <% if artist.id == @exhibit.artist_id %>
+        <option value=<%= artist.id %> selected><%= artist.name %></option>
+        <% else %>
+        <option value=<%= artist.id %>><%= artist.name %></option>
+        <% end %>
+        <% end %>
 
-    </form>
+      </select>
+
+      <hr>
+
+        <input type="submit" value="Save Exhibit Changes"/>
 
 
-    <form action="/manager/<%= @exhibit.id %>/delete" method="POST">
-            <input type="submit" value="Remove Exhibit"></form>
+
+      </form>
+
+
+      <form action="/manager/<%= @exhibit.id %>/delete" method="POST">
+              <input type="submit" value="Remove Exhibit"></form>
+
+</body>
+</html>

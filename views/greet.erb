@@ -3,16 +3,26 @@
   <head>
     <meta charset="utf-8">
     <title>Pretty Pictures Gallery</title>
-      <link rel="stylesheet" href="/style.css">
+
+
+      <link rel="stylesheet" href="style_greet.css" type="text/css">
   </head>
   <body>
 
-    <nav id="menu">
-      <li class="login-menu"><a href="/visitor">Visitor</a></li>
-      <li class="login-menu"><a href="/manager">Manager</a></li>
-<img id="background" src="/images/background.jpg" alt="Water Lillies">
-    </nav>
+
+
+
 <h1 id="tm">Pretty Pictures Gallery</h1>
 
+<ul>
+
+  <!-- <li><a href="/visitor">Visitor Login</a></li>
+  <li><a href="/manager">Manager Login</a></li> -->
+
+  <form action="/manager">
+    <input type="submit" value="Manager Login"></form>
+    <form action="/visitor">
+      <input type="submit" value="Visitor Login"></form>
+</ul>
   </body>
 </html>

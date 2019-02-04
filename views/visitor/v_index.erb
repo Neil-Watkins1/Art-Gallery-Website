@@ -1,21 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="/style.css">
+  <title>Pretty Pictures Gallery</title>
+</head>
+<body>
+  <div class="topnav">
+    <a class="active" href="/">Home</a>
 
-<div class="topnav">
-  <a class="active" href="/">Home</a>
+  </div>
 
-</div>
+  <h2>Current Exhibits</h2>
 
-<h2>Current Exhibits</h2>
+  <% @exhibits.each do |exhibit| %>
 
-<% @exhibits.each do |exhibit| %>
-
-<p>Title: <%= exhibit.title %> </p>
-<h3><a href="/visitorf/<%= exhibit.artist_id %>"> Artist Name: <%= exhibit.artist.name %></a></h3>
+  <p>Title: <%= exhibit.title %> </p>
+  <h4><a href="/visitorf/<%= exhibit.artist_id %>"> Artist Name: <%= exhibit.artist.name %></a></h4>
 
 
 
-<p><a href="/visitor/<%= exhibit.id %>">Exhibit Details</a></p>
+  <p><a href="/visitor/<%= exhibit.id %>">Exhibit Details</a></p>
 
 
 
-    <hr>
-<% end %>
+      <hr>
+  <% end %>
