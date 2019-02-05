@@ -12,19 +12,19 @@ body {
 
 
 h1 {
-  font-size: 100px;
+  font-size: 8em;
   text-align: center;
+  text-shadow: 0 0 2px #FF0000;
 }
 
 
 .login-buttons {
   text-align: center;
   margin-top: 10px;
-
   border-radius: 3px;
 
 
-  font-size: 40px;
+  font-size: 20px;
   font-weight: 400;
   display: inline;
   margin: 10px;
@@ -32,4 +32,9 @@ h1 {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+input[type="submit"] {
+  background-color: #4e9cdb;
+  border-radius: 4px;
 }

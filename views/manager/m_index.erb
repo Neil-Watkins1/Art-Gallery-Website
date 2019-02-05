@@ -7,7 +7,7 @@
   <title>Document</title>
   <link rel="stylesheet" href="style_manager.css" type="text/css">
 </head>
-<body>
+<body class="index_page">
 
 
   <div class="topnav">
@@ -32,7 +32,7 @@
   <h2>Current Artists</h2>
 
   <% @artists.each do |artist| %>
-<div class ="index-item">
+<div class ="index-artist">
   <p>Name: <%= artist.name %> </p>
   <p>Lifetime: <%= artist.lifetime %> </p>
   <p>nationality: <%= artist.nationality %> </p>

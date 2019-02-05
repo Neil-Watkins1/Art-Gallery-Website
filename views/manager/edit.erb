@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <link rel="stylesheet" href="style_manager.css" type="text/css">
+  <link rel="stylesheet" href="/style_manager.css" type="text/css">
 </head>
-<body>
+<body class="changes">
 
   <div class="topnav">
     <a class="active" href="/">Home</a>
@@ -51,7 +52,7 @@
       </form>
 
 
-      <form action="/manager/<%= @exhibit.id %>/delete" method="POST">
+      <form class="button_delete" action="/manager/<%= @exhibit.id %>/delete" method="POST">
               <input type="submit" value="Remove Exhibit"></form>
 
 </body>
