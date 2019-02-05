@@ -15,14 +15,15 @@
 
   <h2>Current Exhibits</h2>
 
+<div class="index-list">
   <% @exhibits.each do |exhibit| %>
-
-  <p>Title: <%= exhibit.title %> </p>
+<div class ="index-item">
+  <h4>Title: <%= exhibit.title %> </h4>
   <p>Artist Name: <%= exhibit.artist.name %></p>
   <p><a href="/manager/<%= exhibit.id %>">Edit Exhibit</a></p>
-  <hr>
+</div>
   <% end %>
-
+</div>
   <p><a href="/manager/add_exhibit">New Exhibit</a></p>
 
   <hr>
