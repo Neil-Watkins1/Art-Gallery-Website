@@ -32,16 +32,16 @@
   <h2>Current Artists</h2>
 
   <% @artists.each do |artist| %>
-
+<div class ="index-item">
   <p>Name: <%= artist.name %> </p>
   <p>Lifetime: <%= artist.lifetime %> </p>
   <p>nationality: <%= artist.nationality %> </p>
 
   <form action="/manager/<%= artist.id %>/artist_delete" method="POST">
     <input type="submit" value="Remove Artist"></form>
+</div>
 
 
-  <hr>
   <% end %>
 
   <p><a href="/manager/new_artist">New Artist</a></p>

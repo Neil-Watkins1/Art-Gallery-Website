@@ -1,9 +1,28 @@
 html {
+  Ariel: inherit;
   background-image:
     radial-gradient(
       #d8a434,
       #4ce8c8
-    ) ;
-
+    );
   font-family: 'Forum', cursive;
+  align-items: center;
+}
+
+.index-item {
+  border: 5px double;
+
+margin: 20px 20px;
+padding: 25 px;
+width: 35%;
+
+
+}
+
+.vdetails {
+  text-align: center;
+  margin: auto;
+  width: 50%;
+  border: 10px ;
+  padding: 10px;
 }

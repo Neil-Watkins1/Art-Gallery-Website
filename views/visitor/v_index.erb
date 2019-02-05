@@ -16,15 +16,15 @@
   <h2>Current Exhibits</h2>
 
   <% @exhibits.each do |exhibit| %>
-
+<div class ="index-item">
   <p>Title: <%= exhibit.title %> </p>
   <h4><a href="/visitorf/<%= exhibit.artist_id %>"> Artist Name: <%= exhibit.artist.name %></a></h4>
 
 
 
   <p><a href="/visitor/<%= exhibit.id %>">Exhibit Details</a></p>
+</div>
 
 
-
-      <hr>
+    
   <% end %>

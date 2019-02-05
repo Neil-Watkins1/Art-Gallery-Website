@@ -12,20 +12,17 @@
   <div class="topnav">
     <a class="active" href="/">Home</a>
 
-  <h2>Exhibit</h2>
+<div class="vdetails">
+  <h2>Title: <%= @exhibit.title %> </h2>
 
-
-
-  <h3>Title: <%= @exhibit.title %> </h3>
-  <hr>
 
   <img id="picture" src=<%=@exhibit.url%> alt=" <%@exhibit.title%> ">
 
   <p>Artist Name: <%= @exhibit.artist.name %> </p>
   <p>Exhibit Type: <%= @exhibit.exhibit_type%> </p>
   <p>Exhibit Date: <%= @exhibit.exhibit_date%> </p>
+</div>
 
-  <hr>
 
 
 </body>
