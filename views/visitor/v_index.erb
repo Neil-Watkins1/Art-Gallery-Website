@@ -13,11 +13,19 @@
 
   </div>
 
-  <h2>Current Exhibits</h2>
+  <h1>Current Exhibits</h1>
+  <p>Show exhibits by type.</p>
 
+  <% @categories.each do |category| %>
+<div class ="type-list">
+  <h4><a href="/visitortype/<%= category.id %>">  <%= category.type %></a></h4>
+
+<% end %>
+
+</div>
   <% @exhibits.each do |exhibit| %>
 <div class ="index-item">
-  <p>Title: <%= exhibit.title %> </p>
+  <h3>Title: <%= exhibit.title %> </h3>
   <h4><a href="/visitorf/<%= exhibit.artist_id %>"> Artist Name: <%= exhibit.artist.name %></a></h4>
 
 
@@ -26,5 +34,5 @@
 </div>
 
 
-    
+
   <% end %>

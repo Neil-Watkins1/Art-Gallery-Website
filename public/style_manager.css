@@ -11,8 +11,8 @@
 }
 .index-item {
 display: inline-block;
-  border: 5px double;
-
+  border: 5px;
+background-color: #538779;
 margin: 20px 20px;
 padding: 25 px;
 width: 35%;
@@ -21,8 +21,9 @@ width: 35%;
 }
 
 .index-artist {
-  border: 5px double;
+  border: 5px;
 display:inline-block;
+background-color: #5bbfa4;
 margin: 20px 20px;
 padding: 25 px;
 width: 35%;

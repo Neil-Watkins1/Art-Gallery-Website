@@ -2,6 +2,7 @@ require('pry')
 
 require( 'sinatra' )
 require( 'sinatra/contrib/all' )
+require_relative('models/category')
 require_relative('models/artist')
 require_relative('models/exhibit')
 also_reload( '../models/*' )
@@ -14,16 +15,27 @@ end
 
 get '/visitor' do
   @exhibits = Exhibit.all
+  @categories = Category.all
   erb (:"visitor/v_index")
 end
 
 get '/manager/add_exhibit' do
   @artists = Artist.all
+  @categories = Category.all
   erb(:"manager/add_exhibit")
 end
 
 get '/manager/new_artist' do
   erb(:"manager/new_artist")
+end
+
+get '/manager/new_category' do
+  erb(:"manager/new_category")
+end
+
+post '/categories' do
+  Category.new(params).save_category
+  redirect to '/manager'
 end
 
 
@@ -54,9 +66,14 @@ get '/visitorf/:id' do
   erb( :"visitor/v_filtered_index" )
 end
 
+get '/visitortype/:id' do
+  @exhibits = Exhibit.find_by_type(params['id'])
+  erb( :"visitor/v_type_index" )
+end
 
 get '/manager/:id' do
   @artists = Artist.all
+  @categories = Category.all
   @exhibit = Exhibit.find(params['id'])
   erb( :"manager/edit" )
 end

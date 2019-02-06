@@ -13,7 +13,7 @@
   <div class="topnav">
     <a class="active" href="/">Home</a>
 
-  <h2>Current Exhibits</h2>
+  <h1>Current Exhibits</h1>
 
 <div class="index-list">
   <% @exhibits.each do |exhibit| %>
@@ -26,10 +26,9 @@
 </div>
   <p><a href="/manager/add_exhibit">New Exhibit</a></p>
 
+
   <hr>
-  <hr>
-  <hr>
-  <h2>Current Artists</h2>
+  <h1>Current Artists</h1>
 
   <% @artists.each do |artist| %>
 <div class ="index-artist">
@@ -45,6 +44,7 @@
   <% end %>
 
   <p><a href="/manager/new_artist">New Artist</a></p>
+  <p><a href="/manager/new_category">New Category</a></p>
 
 </body>
 </html>
