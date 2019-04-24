@@ -145,5 +145,5 @@ exhibit1 = Exhibit.new({
                     exhibit10.save
 
 
-                    binding.pry
+                    
                     nil
